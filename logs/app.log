@@ -1,0 +1,45 @@
+2024-09-21 10:42:54 [[32minfo[39m]: Server is running on port 3000
+2024-09-21 10:43:56 [[32minfo[39m]: Server is running on port 3000
+2024-09-21 10:44:22 [[32minfo[39m]: Server is running on port 3000
+2024-09-21 10:50:13 [[32minfo[39m]: Server is running on port 3000
+2024-09-21 10:50:22 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:50:53 [[32minfo[39m]: Server is running on port 3000
+2024-09-21 10:50:58 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:50:58 [[31merror[39m]: GET_ALL_USERS  Error executing procedure GetAllUsers: db.query is not a function
+2024-09-21 10:51:50 [[32minfo[39m]: Server is running on port 3000
+2024-09-21 10:51:53 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:00 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:00 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:01 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:01 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:01 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:01 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:01 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:01 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:02 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:02 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:02 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:02 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:02 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:02 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:03 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:03 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:03 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:03 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:03 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:03 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:04 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:04 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:04 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:04 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:04 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:04 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:05 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:05 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:05 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:05 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:05 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:05 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:06 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:06 [[33mwarn[39m]: GET_ALL_USERS 
+2024-09-21 10:52:06 [[33mwarn[39m]: GET_ALL_USERS 
