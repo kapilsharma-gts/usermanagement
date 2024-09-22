@@ -1,5 +1,0 @@
-2024-09-21 10:50:58 [[31merror[39m]: GET_ALL_USERS  Error executing procedure GetAllUsers: db.query is not a function
-2024-09-21 11:10:37 [[31merror[39m]: GET_ALL_USERS  Error executing procedure GetAllUsers: fields is not defined
-2024-09-21 11:10:44 [[31merror[39m]: GET_ALL_USERS  Error executing procedure GetAllUsers: fields is not defined
-2024-09-21 11:10:44 [[31merror[39m]: GET_ALL_USERS  Error executing procedure GetAllUsers: fields is not defined
-2024-09-21 11:10:44 [[31merror[39m]: GET_ALL_USERS  Error executing procedure GetAllUsers: fields is not defined
