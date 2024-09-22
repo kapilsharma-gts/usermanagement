@@ -42,15 +42,30 @@ String.prototype.isValidPassword = function() {
     return null;
 };
 
-Object.prototype.isEmpty = function() {
-    if (Array.isArray(this)) {
-        return this.length === 0;
-    } else {
-        return false;
-    }
-};
 
 Array.prototype.first = function() {
       return this.isNotEmpty() ? this[0] : undefined;
 };
 
+
+
+Object.prototype.success = function(data = {}, message = 'Success', statusCode = 200) {
+    return this.status(statusCode).json({
+        success: true,
+        message,
+        data
+    });
+};
+
+Object.prototype.error = function (message = 'An error occurred', statusCode = 500, errors = null) {
+    const response = {
+        success: false,
+        message
+    };
+
+    if (errors) {
+        response.errors = errors;
+    }
+
+    return this.status(statusCode).json(response);
+};

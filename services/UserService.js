@@ -15,24 +15,29 @@ class UserService {
  
         try {
             const results = await ProcedureCaller.callProcedure(ProcedureCatalog.CREATE_USER, [name, email, password]);
-            if (results.isNotEmpty) {
-                return res.status(201).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.USER_CREATED), userId: results.insertId });
+           if (results.isNotEmpty) {
+                return res.success(
+                    { userId: results.insertId }, // Pass the data only
+                    LocalizationHelper.getLocalizedMessage(LocalizationKeys.USER_CREATED), // Success message
+                    200 // Status code
+                );
             } else {
-                return res.status(400).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.INVALID_REQUEST) });
+                return res.error(
+                    LocalizationHelper.getLocalizedMessage(LocalizationKeys.INVALID_REQUEST), // Error message
+                    400 // Status code
+                );
             }
         } catch (error) {
-        console.log(error);
-            return res.status(500).send({ error: error });
+            next(error);
+
         }
     }
 
     async getAllUsers(req, res) {
         try {
-            logger.warn("GET_ALL_USERS ", req);
             const users = await ProcedureCaller.callProcedure(ProcedureCatalog.GET_ALL_USERS);
             return res.status(200).send(users);
         } catch (error) {
-            logger.error("GET_ALL_USERS ", error);
             return res.status(500).send({ error: LocalizationHelper.getLocalizedMessage(LocalizationKeys.GENERAL_ERROR) });
         }
     }

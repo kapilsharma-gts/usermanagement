@@ -11,7 +11,7 @@ class Localization {
         if (this.supportedLocales[locale]) {
             this.locale = locale;
         } else {
-            console.warn(`Locale ${locale} is not supported. Falling back to default.`);
+            console.log(`Locale ${locale} is not supported. Falling back to default.`);
             this.locale = 'en'; // Fallback to English
         }
     }
