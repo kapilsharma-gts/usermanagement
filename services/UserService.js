@@ -12,17 +12,17 @@ class UserService {
         if (!name || !email || !password) {
             return res.status(400).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.MISSING_FIELDS) });
         }
-
+ 
         try {
-
-            const result = await ProcedureCaller.callProcedure(ProcedureCatalog.CREATE_USER, name, email, password);
-            if (result.affectedRows > 0) {
-                return res.status(201).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.USER_CREATED), userId: result.insertId });
+            const results = await ProcedureCaller.callProcedure(ProcedureCatalog.CREATE_USER, [name, email, password]);
+            if (results.isNotEmpty) {
+                return res.status(201).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.USER_CREATED), userId: results.insertId });
             } else {
                 return res.status(400).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.INVALID_REQUEST) });
             }
         } catch (error) {
-            return res.status(500).send({ error: LocalizationHelper.getLocalizedMessage(LocalizationKeys.GENERAL_ERROR) });
+        console.log(error);
+            return res.status(500).send({ error: error });
         }
     }
 

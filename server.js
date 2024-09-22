@@ -6,6 +6,7 @@ const db = require('./config/db.config');
 const auth_middleware = require('./middlewares/auth.middleware');
 const localeMiddleware = require('./middlewares/localeMiddleware');
 const userRoutes = require('./routes/UserRoutes'); // Import your routing file
+const ProcedureCaller = require('./prototypes/ValidationHelperPrototype'); 
 
 dotenv.config();
 
