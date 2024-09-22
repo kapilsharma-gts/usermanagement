@@ -1,10 +1,8 @@
 const LocalizationHelper = require('../helpers/LocalizationHelper');
 const LocalizationKeys = require('../localization/LocalizationKeys');
-
 const ProcedureCaller = require('../queries/ProcedureCaller'); 
 const ProcedureCatalog = require('../constants/ProcedureCatalog'); // Stores procedure names
-const logger = require('../utils/logger');
-
+const { handleError } = require('../error/errorHelper');
 class UserService {
     async createUser(req, res) {
         const { name, email, password } = req.body;
@@ -28,7 +26,7 @@ class UserService {
                 );
             }
         } catch (error) {
-            next(error);
+            handleError(res, error);
 
         }
     }
@@ -38,26 +36,26 @@ class UserService {
             const users = await ProcedureCaller.callProcedure(ProcedureCatalog.GET_ALL_USERS);
             return res.status(200).send(users);
         } catch (error) {
-            return res.status(500).send({ error: LocalizationHelper.getLocalizedMessage(LocalizationKeys.GENERAL_ERROR) });
+            handleError(res, error);
         }
     }
 
     async getUserById(req, res) {
-        const userId = req.params.id;
+        const userId = req.body.id;
 
         if (!userId) {
             return res.status(400).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.MISSING_FIELDS) });
         }
-
+        console.log("user id ", userId);
+        
         try {
-
             const user = await ProcedureCaller.callProcedure(ProcedureCatalog.GET_USER_BY_ID, userId);
-            if (user.length === 0) {
+            if (user.isEmpty) {
                 return res.status(404).send({ message: LocalizationHelper.getLocalizedMessage(LocalizationKeys.USER_NOT_FOUND) });
             }
-            return res.status(200).send(user[0]);
+            return res.status(200).send(user.first);
         } catch (error) {
-            return res.status(500).send({ error: LocalizationHelper.getLocalizedMessage(LocalizationKeys.GENERAL_ERROR) });
+            handleError(res, error);
         }
     }
 }

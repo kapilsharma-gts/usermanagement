@@ -9,8 +9,8 @@ class UserRoutes {
 
     initializeRoutes() {
         this.router.post('/createUser', UserController.createUser.bind(UserController));
+        this.router.post('/getUserById', UserController.getUserById.bind(UserController));
         this.router.get('/getAllUsers', UserController.getAllUsers.bind(UserController));
-        this.router.get('/getUserById', UserController.getUserById.bind(UserController));
     }
 }
 

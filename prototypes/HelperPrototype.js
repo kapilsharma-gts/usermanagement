@@ -28,6 +28,17 @@ if (!Array.prototype.hasOwnProperty('isNotEmpty')) {
         enumerable: false
     });
 }
+
+if (!Array.prototype.hasOwnProperty('first')) {
+    Object.defineProperty(Array.prototype, 'first', {
+        get: function() {
+            return this.isNotEmpty ? this[0] : undefined;
+        },
+        configurable: true,
+        enumerable: false
+    });
+}
+
 String.prototype.isValidEmail = function() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(this)) {
@@ -41,12 +52,6 @@ String.prototype.isValidPassword = function() {
     }
     return null;
 };
-
-
-Array.prototype.first = function() {
-      return this.isNotEmpty() ? this[0] : undefined;
-};
-
 
 
 Object.prototype.success = function(data = {}, message = 'Success', statusCode = 200) {
